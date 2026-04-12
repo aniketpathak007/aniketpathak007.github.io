@@ -8,7 +8,7 @@
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: #020617;
+      background: radial-gradient(circle at top, #0f172a, #020617);
       color: white;
     }
 
@@ -61,16 +61,24 @@
       border-radius: 8px;
       cursor: pointer;
       font-weight: bold;
+      transition: 0.3s;
     }
 
     .btn:hover {
-      background: #16a34a;
+      box-shadow: 0 0 20px #22c55e;
+      transform: scale(1.05);
     }
 
     /* SECTION */
     .section {
       padding: 40px;
       text-align: center;
+      animation: fadeIn 1s ease-in;
+    }
+
+    h2 {
+      color: #38bdf8;
+      text-shadow: 0 0 10px #38bdf8;
     }
 
     .cards {
@@ -112,6 +120,11 @@
       text-decoration: underline;
     }
 
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
   </style>
 </head>
 
@@ -122,6 +135,7 @@
   <div class="logo">AniketPathak</div>
   <div class="nav-links">
     <a href="#games">Games</a>
+    <a href="#ai">AI Tools</a>
     <a href="#about">About</a>
   </div>
 </div>
@@ -129,6 +143,8 @@
 <!-- HERO -->
 <div class="hero">
   <h1 class="title">🎮 Welcome to My Game World</h1>
+  <p>I build games and AI tools 🚀</p>
+  <button class="btn" onclick="scrollToGames()">Play My Games</button>
 </div>
 
 <!-- GAMES -->
@@ -137,9 +153,8 @@
 
   <div class="cards">
 
-    <!-- MAIN GAME -->
     <div class="card">
-      <h3>Platformer - Survival game 🚀</h3>
+      <h3>🎮 Platformer - Survival</h3>
 
       <iframe 
         src="https://turbowarp.org/1084340167/embed" 
@@ -150,16 +165,29 @@
       <br><br>
 
       <a href="https://turbowarp.org/1084340167" target="_blank">
-        🔥 Play in Turbowarp
+        🔥 Play in TurboWarp
       </a>
     </div>
 
-    <!-- SECOND GAME -->
     <div class="card">
       <h3>🧟 PvZ - A New Start</h3>
-      <p>coming soon...</p>
+      <p>Coming soon...</p>
     </div>
 
+  </div>
+</div>
+
+<!-- AI GENERATOR -->
+<div class="section" id="ai">
+  <h2>🤖 AI Game Generator</h2>
+
+  <button class="btn" onclick="generateGame()">Generate Game Idea</button>
+
+  <div class="card" id="aiResult" style="margin:auto; margin-top:20px; display:none;">
+    <h3 id="gameTitle"></h3>
+    <p><b>Genre:</b> <span id="genre"></span></p>
+    <p><b>Theme:</b> <span id="theme"></span></p>
+    <p><b>Special Power:</b> <span id="power"></span></p>
   </div>
 </div>
 
@@ -179,6 +207,32 @@ function scrollToGames() {
   document.getElementById("games").scrollIntoView({
     behavior: "smooth"
   });
+}
+
+function generateGame() {
+  let titles = ["Shadow Battle", "Zombie Rush", "AI Arena", "Galaxy Defense"];
+  let genres = ["Strategy", "Survival", "Puzzle", "Shooter"];
+  let themes = ["Space", "Jungle", "Future City", "Underwater"];
+  let powers = [
+    "Time freeze ability",
+    "AI enemy adapts to player",
+    "Double damage mode",
+    "Clone yourself"
+  ];
+
+  document.getElementById("gameTitle").innerText =
+    titles[Math.floor(Math.random()*titles.length)];
+
+  document.getElementById("genre").innerText =
+    genres[Math.floor(Math.random()*genres.length)];
+
+  document.getElementById("theme").innerText =
+    themes[Math.floor(Math.random()*themes.length)];
+
+  document.getElementById("power").innerText =
+    powers[Math.floor(Math.random()*powers.length)];
+
+  document.getElementById("aiResult").style.display = "block";
 }
 </script>
 

@@ -12,11 +12,14 @@
       color: white;
     }
 
+    /* NAVBAR */
     .navbar {
       display: flex;
       justify-content: space-between;
       background: #0f172a;
       padding: 15px 30px;
+      position: sticky;
+      top: 0;
     }
 
     .logo {
@@ -31,9 +34,23 @@
       text-decoration: none;
     }
 
+    .nav-links a:hover {
+      color: #22c55e;
+    }
+
+    /* HERO */
     .hero {
       text-align: center;
       padding: 80px 20px;
+    }
+
+    .title {
+      animation: glow 2s infinite alternate;
+    }
+
+    @keyframes glow {
+      from { text-shadow: 0 0 10px #38bdf8; }
+      to { text-shadow: 0 0 25px #22c55e; }
     }
 
     .btn {
@@ -42,25 +59,49 @@
       border: none;
       border-radius: 8px;
       cursor: pointer;
+      font-weight: bold;
     }
 
+    /* SECTION */
     .section {
       padding: 40px;
       text-align: center;
     }
 
-    .card {
-      background: #1e293b;
-      margin: 20px auto;
-      padding: 20px;
-      border-radius: 10px;
-      width: 250px;
+    .cards {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
     }
+
+    /* CARD */
+    .card {
+      background: #0f172a;
+      padding: 20px;
+      border-radius: 12px;
+      width: 250px;
+      transition: 0.3s;
+      box-shadow: 0 0 10px transparent;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+      background: #1e293b;
+      box-shadow: 0 0 20px #22c55e;
+    }
+
+    iframe {
+      border: none;
+      border-radius: 10px;
+    }
+
   </style>
 </head>
 
 <body>
 
+<!-- NAVBAR -->
 <div class="navbar">
   <div class="logo">AniketPathak</div>
   <div class="nav-links">
@@ -69,27 +110,62 @@
   </div>
 </div>
 
+<!-- HERO -->
 <div class="hero">
-  <h1>🎮 Welcome to My Game World</h1>
+  <h1 class="title">🎮 Welcome to My Game World</h1>
   <p>I build games and AI tools 🚀</p>
-  <button class="btn" onclick="alert('Coming soon!')">Play My Games</button>
+  <button class="btn" onclick="scrollToGames()">Play My Games</button>
 </div>
 
+<!-- GAMES -->
 <div class="section" id="games">
-  <h2>My Games</h2>
-  <div class="card">
-    <p>Game 1 (Coming soon)</p>
+  <h2>🎮 My Games</h2>
+
+  <div class="cards">
+
+    <div class="card">
+      <h3>🎮 Live Game</h3>
+
+      <iframe 
+        src="https://turbowarp.org/1/embed" 
+        width="100%" 
+        height="200">
+      </iframe>
+
+      <p>Replace with your real game soon 🚀</p>
+    </div>
+
+    <div class="card">
+      <h3>🧟 Zombie War</h3>
+      <p>Fight waves of zombies</p>
+    </div>
+
+    <div class="card">
+      <h3>🌱 Plant Defense</h3>
+      <p>Strategy survival game</p>
+    </div>
+
   </div>
 </div>
 
+<!-- ABOUT -->
 <div class="section" id="about">
-  <h2>About Me</h2>
+  <h2>👋 About Me</h2>
   <p>
     Hi, I’m Aniket 👋 <br><br>
-    I am young game developer who loves building games and exploring AI.<br><br>
+    I’m a young game developer who loves building games and exploring AI.<br><br>
     This website is where I share my creations 🚀
   </p>
 </div>
+
+<!-- SCRIPT -->
+<script>
+function scrollToGames() {
+  document.getElementById("games").scrollIntoView({
+    behavior: "smooth"
+  });
+}
+</script>
 
 </body>
 </html>

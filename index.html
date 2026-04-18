@@ -12,6 +12,7 @@
       color: white;
     }
 
+    /* NAVBAR */
     .navbar {
       display: flex;
       justify-content: space-between;
@@ -19,6 +20,7 @@
       padding: 15px 30px;
       position: sticky;
       top: 0;
+      z-index: 1000;
     }
 
     .logo {
@@ -37,9 +39,10 @@
       color: #22c55e;
     }
 
+    /* HERO */
     .hero {
       text-align: center;
-      padding: 50px 20px;
+      padding: 80px 20px;
     }
 
     .title {
@@ -58,6 +61,7 @@
       border-radius: 8px;
       cursor: pointer;
       font-weight: bold;
+      transition: 0.3s;
     }
 
     .btn:hover {
@@ -65,14 +69,16 @@
       transform: scale(1.05);
     }
 
+    /* SECTION */
     .section {
       padding: 40px;
       text-align: center;
-      border-top: 1px solid #1e293b;
+      animation: fadeIn 1s ease-in;
     }
 
     h2 {
       color: #38bdf8;
+      text-shadow: 0 0 10px #38bdf8;
     }
 
     .cards {
@@ -82,12 +88,14 @@
       gap: 20px;
     }
 
+    /* CARD */
     .card {
       background: #0f172a;
       padding: 20px;
       border-radius: 12px;
-      width: 320px;
+      width: 300px;
       transition: 0.3s;
+      box-shadow: 0 0 10px transparent;
     }
 
     .card:hover {
@@ -107,6 +115,16 @@
       text-decoration: none;
       font-weight: bold;
     }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
   </style>
 </head>
 
@@ -117,46 +135,42 @@
   <div class="logo">AniketPathak</div>
   <div class="nav-links">
     <a href="#games">Games</a>
-    <a href="#ai">AI</a>
+    <a href="#ai">AI Tools</a>
     <a href="#about">About</a>
   </div>
 </div>
 
-<!-- HERO (MAIN GAME) -->
+<!-- HERO -->
 <div class="hero">
-  <h1 class="title">🧟 PvZ - A New Start</h1>
-  <p>Play my custom Plants vs Zombies style game 🚀</p>
-
-  <iframe 
-    src="https://turbowarp.org/1084340167/embed" 
-    width="90%" 
-    height="350">
-  </iframe>
-
-  <br><br>
-
-  <a href="https://turbowarp.org/1084340167" target="_blank" class="btn">
-    🔥 Play Full Screen
-  </a>
+  <h1 class="title">🎮 Welcome to My Game World</h1>
+  <p>I build games and AI tools 🚀</p>
+  <button class="btn" onclick="scrollToGames()">Play My Games</button>
 </div>
 
-<!-- GAMES SECTION -->
+<!-- GAMES -->
 <div class="section" id="games">
   <h2>🎮 My Games</h2>
 
   <div class="cards">
 
-    <!-- Game 1 -->
     <div class="card">
-      <h3>🧟 PvZ - A New Start</h3>
-      <p>Strategy survival game</p>
-      <a href="https://turbowarp.org/1084340167" target="_blank">▶ Play</a>
+      <h3>🎮 Platformer - Survival</h3>
+
+      <iframe 
+        src="https://turbowarp.org/1084340167/embed" 
+        width="100%" 
+        height="220">
+      </iframe>
+
+      <br><br>
+
+      <a href="https://turbowarp.org/1084340167" target="_blank">
+        🔥 Play in TurboWarp
+      </a>
     </div>
 
-    <!-- Game 2 (READY SLOT) -->
     <div class="card">
-      <h3>🎮 Game 2</h3>
-      <p>Add your next game here</p>
+      <h3>🧟 PvZ - A New Start</h3>
       <p>Coming soon...</p>
     </div>
 
@@ -167,13 +181,13 @@
 <div class="section" id="ai">
   <h2>🤖 AI Game Generator</h2>
 
-  <button class="btn" onclick="generateGame()">🎲 Generate Next Game Idea</button>
+  <button class="btn" onclick="generateGame()">Generate Game Idea</button>
 
   <div class="card" id="aiResult" style="margin:auto; margin-top:20px; display:none;">
     <h3 id="gameTitle"></h3>
     <p><b>Genre:</b> <span id="genre"></span></p>
     <p><b>Theme:</b> <span id="theme"></span></p>
-    <p><b>Power:</b> <span id="power"></span></p>
+    <p><b>Special Power:</b> <span id="power"></span></p>
   </div>
 </div>
 
@@ -187,14 +201,21 @@
   </p>
 </div>
 
+<!-- SCRIPT -->
 <script>
+function scrollToGames() {
+  document.getElementById("games").scrollIntoView({
+    behavior: "smooth"
+  });
+}
+
 function generateGame() {
   let titles = ["Shadow Battle", "Zombie Rush", "AI Arena", "Galaxy Defense"];
   let genres = ["Strategy", "Survival", "Puzzle", "Shooter"];
   let themes = ["Space", "Jungle", "Future City", "Underwater"];
   let powers = [
     "Time freeze ability",
-    "AI learns your moves",
+    "AI enemy adapts to player",
     "Double damage mode",
     "Clone yourself"
   ];

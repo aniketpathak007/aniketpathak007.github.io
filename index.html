@@ -1,1 +1,219 @@
-<!DOCTYPE html> <html> <head> <title>AniketPathak | Game Developer</title> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <style> body { margin: 0; font-family: Arial, sans-serif; background: radial-gradient(circle at top, #0f172a, #020617); color: white; } .navbar { display: flex; justify-content: space-between; background: #0f172a; padding: 15px 30px; position: sticky; top: 0; } .logo { color: #38bdf8; font-size: 20px; font-weight: bold; } .nav-links a { margin-left: 15px; color: white; text-decoration: none; } .nav-links a:hover { color: #22c55e; } .hero { text-align: center; padding: 50px 20px; } .title { animation: glow 2s infinite alternate; } @keyframes glow { from { text-shadow: 0 0 10px #38bdf8; } to { text-shadow: 0 0 25px #22c55e; } } .btn { padding: 10px 20px; background: #22c55e; border: none; border-radius: 8px; cursor: pointer; font-weight: bold; } .btn:hover { box-shadow: 0 0 20px #22c55e; transform: scale(1.05); } .section { padding: 40px; text-align: center; border-top: 1px solid #1e293b; } h2 { color: #38bdf8; } .cards { display: flex; justify-content: center; flex-wrap: wrap; gap: 20px; } .card { background: #0f172a; padding: 20px; border-radius: 12px; width: 320px; transition: 0.3s; } .card:hover { transform: scale(1.05); background: #1e293b; box-shadow: 0 0 20px #22c55e; } iframe { border: none; border-radius: 10px; margin-top: 10px; } a { color: #22c55e; text-decoration: none; font-weight: bold; } </style> </head> <body> <!-- NAVBAR --> <div class="navbar"> <div class="logo">AniketPathak</div> <div class="nav-links"> <a href="#games">Games</a> <a href="#ai">AI</a> <a href="#about">About</a> </div> </div> <!-- HERO (MAIN GAME) --> <div class="hero"> <h1 class="title">🧟 PvZ - A New Start</h1> <p>Play my custom Plants vs Zombies style game 🚀</p> <iframe src="https://turbowarp.org/1084340167/embed" width="90%" height="350"> </iframe> <br><br> <a href="https://turbowarp.org/1084340167" target="_blank" class="btn"> 🔥 Play Full Screen </a> </div> <!-- GAMES SECTION --> <div class="section" id="games"> <h2>🎮 My Games</h2> <div class="cards"> <!-- Game 1 --> <div class="card"> <h3>🧟 PvZ - A New Start</h3> <p>Strategy survival game</p> <a href="https://turbowarp.org/1084340167" target="_blank">▶ Play</a> </div> <!-- Game 2 (READY SLOT) --> <div class="card"> <h3>🎮 Game 2</h3> <p>Add your next game here</p> <p>Coming soon...</p> </div> </div> </div> <!-- AI GENERATOR --> <div class="section" id="ai"> <h2>🤖 AI Game Generator</h2> <button class="btn" onclick="generateGame()">🎲 Generate Next Game Idea</button> <div class="card" id="aiResult" style="margin:auto; margin-top:20px; display:none;"> <h3 id="gameTitle"></h3> <p><b>Genre:</b> <span id="genre"></span></p> <p><b>Theme:</b> <span id="theme"></span></p> <p><b>Power:</b> <span id="power"></span></p> </div> </div> <!-- ABOUT --> <div class="section" id="about"> <h2>👋 About Me</h2> <p> Hi, I’m Aniket 👋 <br><br> I’m a young game developer who loves building games and exploring AI.<br><br> This website is where I share my creations 🚀 </p> </div> <script> function generateGame() { let titles = ["Shadow Battle", "Zombie Rush", "AI Arena", "Galaxy Defense"]; let genres = ["Strategy", "Survival", "Puzzle", "Shooter"]; let themes = ["Space", "Jungle", "Future City", "Underwater"]; let powers = [ "Time freeze ability", "AI learns your moves", "Double damage mode", "Clone yourself" ]; document.getElementById("gameTitle").innerText = titles[Math.floor(Math.random()*titles.length)]; document.getElementById("genre").innerText = genres[Math.floor(Math.random()*genres.length)]; document.getElementById("theme").innerText = themes[Math.floor(Math.random()*themes.length)]; document.getElementById("power").innerText = powers[Math.floor(Math.random()*powers.length)]; document.getElementById("aiResult").style.display = "block"; } </script> </body> </html>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>AniketPathak | Game Developer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: radial-gradient(circle at top, #0f172a, #020617);
+      color: white;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      background: #0f172a;
+      padding: 15px 30px;
+      position: sticky;
+      top: 0;
+    }
+
+    .logo {
+      color: #38bdf8;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .nav-links a {
+      margin-left: 15px;
+      color: white;
+      text-decoration: none;
+    }
+
+    .nav-links a:hover {
+      color: #22c55e;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 50px 20px;
+    }
+
+    .title {
+      animation: glow 2s infinite alternate;
+    }
+
+    @keyframes glow {
+      from { text-shadow: 0 0 10px #38bdf8; }
+      to { text-shadow: 0 0 25px #22c55e; }
+    }
+
+    .btn {
+      padding: 10px 20px;
+      background: #22c55e;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .btn:hover {
+      box-shadow: 0 0 20px #22c55e;
+      transform: scale(1.05);
+    }
+
+    .section {
+      padding: 40px;
+      text-align: center;
+      border-top: 1px solid #1e293b;
+    }
+
+    h2 {
+      color: #38bdf8;
+    }
+
+    .cards {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .card {
+      background: #0f172a;
+      padding: 20px;
+      border-radius: 12px;
+      width: 320px;
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+      background: #1e293b;
+      box-shadow: 0 0 20px #22c55e;
+    }
+
+    iframe {
+      border: none;
+      border-radius: 10px;
+      margin-top: 10px;
+    }
+
+    a {
+      color: #22c55e;
+      text-decoration: none;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar">
+  <div class="logo">AniketPathak</div>
+  <div class="nav-links">
+    <a href="#games">Games</a>
+    <a href="#ai">AI</a>
+    <a href="#about">About</a>
+  </div>
+</div>
+
+<!-- HERO (MAIN GAME) -->
+<div class="hero">
+  <h1 class="title">🧟 PvZ - A New Start</h1>
+  <p>Play my custom Plants vs Zombies style game 🚀</p>
+
+  <iframe 
+    src="https://turbowarp.org/1084340167/embed" 
+    width="90%" 
+    height="350">
+  </iframe>
+
+  <br><br>
+
+  <a href="https://turbowarp.org/1084340167" target="_blank" class="btn">
+    🔥 Play Full Screen
+  </a>
+</div>
+
+<!-- GAMES SECTION -->
+<div class="section" id="games">
+  <h2>🎮 My Games</h2>
+
+  <div class="cards">
+
+    <!-- Game 1 -->
+    <div class="card">
+      <h3>🧟 PvZ - A New Start</h3>
+      <p>Strategy survival game</p>
+      <a href="https://turbowarp.org/1084340167" target="_blank">▶ Play</a>
+    </div>
+
+    <!-- Game 2 (READY SLOT) -->
+    <div class="card">
+      <h3>🎮 Game 2</h3>
+      <p>Add your next game here</p>
+      <p>Coming soon...</p>
+    </div>
+
+  </div>
+</div>
+
+<!-- AI GENERATOR -->
+<div class="section" id="ai">
+  <h2>🤖 AI Game Generator</h2>
+
+  <button class="btn" onclick="generateGame()">🎲 Generate Next Game Idea</button>
+
+  <div class="card" id="aiResult" style="margin:auto; margin-top:20px; display:none;">
+    <h3 id="gameTitle"></h3>
+    <p><b>Genre:</b> <span id="genre"></span></p>
+    <p><b>Theme:</b> <span id="theme"></span></p>
+    <p><b>Power:</b> <span id="power"></span></p>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<div class="section" id="about">
+  <h2>👋 About Me</h2>
+  <p>
+    Hi, I’m Aniket 👋 <br><br>
+    I’m a young game developer who loves building games and exploring AI.<br><br>
+    This website is where I share my creations 🚀
+  </p>
+</div>
+
+<script>
+function generateGame() {
+  let titles = ["Shadow Battle", "Zombie Rush", "AI Arena", "Galaxy Defense"];
+  let genres = ["Strategy", "Survival", "Puzzle", "Shooter"];
+  let themes = ["Space", "Jungle", "Future City", "Underwater"];
+  let powers = [
+    "Time freeze ability",
+    "AI learns your moves",
+    "Double damage mode",
+    "Clone yourself"
+  ];
+
+  document.getElementById("gameTitle").innerText =
+    titles[Math.floor(Math.random()*titles.length)];
+
+  document.getElementById("genre").innerText =
+    genres[Math.floor(Math.random()*genres.length)];
+
+  document.getElementById("theme").innerText =
+    themes[Math.floor(Math.random()*themes.length)];
+
+  document.getElementById("power").innerText =
+    powers[Math.floor(Math.random()*powers.length)];
+
+  document.getElementById("aiResult").style.display = "block";
+}
+</script>
+
+</body>
+</html>
